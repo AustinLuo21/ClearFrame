@@ -45,7 +45,6 @@ function refreshCheckButton() {
     || capturingBackground
     || !running
     || !savedBackground
-    || allowedPeople.length === 0
     || !frameIsCurrent
   checkButton.setAttribute('aria-busy', String(checkingFrame))
 }
@@ -798,7 +797,7 @@ function selectPerson(event) {
     markSceneChanged()
     statusText.textContent = allowedPeople.length
       ? `Removed them. ${allowedPeople.length} allowed on camera`
-      : 'Nobody selected — showing everyone. Click people to allow them.'
+      : 'Nobody selected — removing everyone. Click people to allow them.'
     return
   }
 
